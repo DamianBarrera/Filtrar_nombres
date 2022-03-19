@@ -6,10 +6,17 @@ const cajaImg = document.querySelector('.box-img');
 const nombres = ["Antonella","Yasmin","Malena","Euguenia","Maria"];
 const pictures = ["paisaje1.jpg","paisaje2.jpg","paisaje3.jpg","paisaje4.jpg","paisaje5.jpg","paisaje6.jpg","paisaje7.jpg"]
 
+
+// *************************************************
+// LLamada a funciones 
+
 insertNames();
 insertImages();
 selectNames();
 selectImages()
+
+// *************************************************
+// Funciones
 
 function insertNames(){
     nombres.forEach( n => {
@@ -50,11 +57,13 @@ function insertImages(){
      } )
 
  }
- 
+
+// *************************************************
+//  Eventos 
 
  busqueda.addEventListener('change', (e)=> {
     if( e.target.value === '"Todos los nombres"' ){
-         
+         caja.textContent = "";
         insertNames();
     }else {
         caja.textContent = "";
@@ -66,6 +75,7 @@ function insertImages(){
 
  busquedaImg.addEventListener('change',(e) => {
      if( e.target.value === '"Todas las imagenes"' ){
+         cajaImg.textContent = "";
          insertImages()
      }else {
         cajaImg.textContent = ""; 
